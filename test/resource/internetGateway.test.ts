@@ -1,7 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import * as FirstCdkWork from '../../lib/first_cdk_work-stack';
-import { Table } from 'aws-cdk-lib/aws-dynamodb';
 
 test('InternetGateway',() => {
     const app = new cdk.App();
