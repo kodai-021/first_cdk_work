@@ -1,7 +1,8 @@
 import * as cdk from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 import { Vpc } from './resource/vpc';
 import { Subnet } from './resource/subnet';
-import { Construct } from 'constructs';
+import { InternetGateway } from './resource/internetGateway';
 
 
 export class FirstCdkWorkStack extends cdk.Stack {
@@ -15,5 +16,9 @@ export class FirstCdkWorkStack extends cdk.Stack {
     // Subnet
     const subnet = new Subnet(vpc.vpc);
     subnet.createResources(this);
+
+    //Internet Gateway
+    const internetGateway = new InternetGateway(vpc.vpc);
+    internetGateway.createResources(this);
   }
 }
